@@ -1,351 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abanob Hany — Information Security Analyst</title>
-  <meta name="description" content="Portfolio of Abanob Hany — Information Security Analyst. Threat detection, incident response, SOC operations, and penetration testing." />
-  <link rel="canonical" href="https://abanobhany7.github.io/" />
-  <meta property="og:title" content="Abanob Hany — Information Security Analyst" />
-  <meta property="og:description" content="Threat detection, incident response, SOC operations, and penetration testing." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://abanobhany7.github.io/" />
-  <meta name="theme-color" content="#0ef" />
-  <style>
-    :root{
-      --bg: #0b0f14;
-      --panel: #0f1620;
-      --text: #e6f1ff;
-      --muted: #9fb3c8;
-      --primary: #1df28d; /* neon green */
-      --accent: #00e5ff;  /* cyan */
-      --ring: rgba(0,229,255,.25);
-      --code: #0a1017;
-      --border: #1b2430;
-      --shadow: 0 10px 30px rgba(0, 229, 255, .07), 0 4px 12px rgba(29,242,141,.05);
-      --radius: 20px;
-      --maxw: 1150px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 800px at 15% -10%, rgba(0,229,255,.09), transparent 60%),
-                  radial-gradient(1000px 700px at 85% 110%, rgba(29,242,141,.08), transparent 60%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a{ color: var(--accent); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-    header{
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(11,15,20,.75), rgba(11,15,20,.55));
-      border-bottom: 1px solid var(--border);
-    }
-    .nav{ max-width: var(--maxw); margin: 0 auto; display:flex; align-items:center; justify-content:space-between; padding: 14px 20px; }
-    .brand{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px; }
-    .brand .dot{ width:10px; height:10px; border-radius:999px; background: var(--primary); box-shadow: 0 0 16px var(--primary); }
-    .brand span{ opacity:.9; }
-    .menu{ display:flex; gap: 14px; flex-wrap: wrap; }
-    .menu a{ padding: 8px 12px; border-radius: 12px; color: var(--text); opacity:.9; border: 1px solid transparent; }
-    .menu a.active, .menu a:hover{ border-color: rgba(0,229,255,.35); background: rgba(0,229,255,.06); box-shadow: inset 0 0 0 1px rgba(0,229,255,.15); }
-
-    .container{ max-width: var(--maxw); margin: 0 auto; padding: 26px 20px; }
-
-    .hero{ display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; padding: 40px 0 10px; }
-    .card{ background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
-    .card.pad{ padding: 26px; }
-
-    h1{ font-size: clamp(28px, 4vw, 46px); line-height: 1.15; margin: 0 0 12px; }
-    h2{ font-size: clamp(22px, 3vw, 30px); margin: 0 0 6px; }
-    h3{ font-size: 18px; margin: 18px 0 8px; color: var(--text); }
-    p.lead{ color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); }
-
-    .badges{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-    .badge{ border:1px solid var(--border); background: #0c121a; color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 13px; box-shadow: var(--shadow); }
-
-    .grid{ display:grid; gap:18px; }
-    .two{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .three{ grid-template-columns: repeat(3, minmax(0,1fr)); }
-
-    .section{ margin: 36px 0; }
-    .section .title{ display:flex; align-items:center; gap:10px; margin: 0 0 14px; }
-    .title .line{ height:1px; background: linear-gradient(90deg, var(--accent), transparent); flex:1; }
-
-    ul.clean{ list-style: none; padding: 0; margin: 0; }
-    ul.clean li{ padding-left: 0; }
-
-    .panel{ background: var(--panel); border:1px solid var(--border); border-radius: var(--radius); padding: 18px; }
-    .panel h4{ margin: 0 0 8px; font-size: 16px; }
-    .muted{ color: var(--muted); }
-    .kv{ display:grid; grid-template-columns: 160px 1fr; gap:10px; }
-
-    .chip{ display:inline-block; padding: 8px 12px; border-radius: 12px; background: #0c141d; border:1px solid var(--border); margin: 6px 6px 0 0; font-size: 13px; }
-
-    .cta{ display:flex; gap:12px; margin-top: 18px; flex-wrap:wrap; }
-    .btn{ display:inline-flex; align-items:center; gap:10px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: #0c121a; color: var(--text); cursor:pointer; transition:.2s transform;
-      box-shadow: 0 0 0 0 rgba(0,229,255,.0), inset 0 0 0 1px rgba(0,229,255,.08);
-    }
-    .btn.primary{ background: radial-gradient(120% 120% at 20% 10%, rgba(0,229,255,.2), rgba(29,242,141,.2)), #0c121a; border-color: rgba(0,229,255,.3); box-shadow: 0 8px 18px rgba(0,229,255,.12), inset 0 0 0 1px rgba(0,229,255,.18); }
-    .btn:hover{ transform: translateY(-1px); }
-
-    .projects .project{ padding: 16px; border:1px solid var(--border); border-radius: 16px; background: #0c121a; }
-
-    footer{ border-top: 1px solid var(--border); margin-top: 36px; }
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      .two{ grid-template-columns: 1fr; }
-      .three{ grid-template-columns: 1fr; }
-      .kv{ grid-template-columns: 1fr; }
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Abanob Hany",
-    "jobTitle": "Information Security Analyst",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "10th of Ramadan City",
-      "addressRegion": "Sharqia",
-      "addressCountry": "EG"
-    },
-    "email": "mailto:abanobhany522@gmail.com",
-    "telephone": "+201553575776",
-    "url": "https://abanobhany7.github.io/"
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abanob Hany - Cybersecurity Portfolio</title>
+    <style>
+        body { background-color: #0a0a0a; color: #00ff99; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px; }
+        h1, h2 { color: #00ffcc; }
+        section { padding: 20px; max-width: 900px; margin: auto; }
+        .divider { border-bottom: 1px solid #00ff99; margin: 20px 0; }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <div class="brand"><span class="dot"></span><span>Abanob Hany</span></div>
-      <div class="menu" id="menu">
-        <a href="#about">About</a>
-        <a href="#academics">Academics</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <h1>Abanob Hany - Cybersecurity Portfolio</h1>
+    </header>
 
-  <main class="container">
-    <!-- HERO / ABOUT -->
-    <section id="about" class="hero">
-      <div class="card pad">
-        <h1>Information Security Analyst</h1>
-        <p class="lead">Every alert tells a story — and I have built my career on uncovering it. From the first suspicious log entry to the final incident report, I specialize in turning raw data into actionable security intelligence. Working in the SOC field, I have tracked threats in real time, contained incidents under pressure, and safeguarded critical systems against evolving attacks. My mission is simple: see the threat before it sees you.</p>
-        <div class="badges">
-          <span class="badge">SOC Operations</span>
-          <span class="badge">Threat Detection</span>
-          <span class="badge">Incident Response</span>
-          <span class="badge">Penetration Testing</span>
-        </div>
-        <div class="cta">
-          <a class="btn primary" href="#contact">Contact Me</a>
-          <a class="btn" href="#projects">View Projects</a>
-        </div>
-      </div>
-      <div class="card pad">
-        <h2>Abanob Hany</h2>
-        <p class="muted">10th of Ramadan City, Sharqia, Egypt</p>
-        <div class="kv" style="margin-top:12px;">
-          <div class="muted">Email</div>
-          <div><a href="mailto:abanobhany522@gmail.com">abanobhany522@gmail.com</a></div>
-          <div class="muted">Phone</div>
-          <div><a href="tel:+201553575776">+20 155 357 5776</a></div>
-          <div class="muted">Website</div>
-          <div><a href="https://abanobhany7.github.io/">abanobhany7.github.io</a></div>
-        </div>
-      </div>
-    </section>
+    <section>
+        <h2>About</h2>
+        <p>Motivated Cybersecurity student with strong knowledge in SOC operations, penetration testing, and networking.</p>
+        <div class="divider"></div>
 
-    <!-- ACADEMICS -->
-    <section id="academics" class="section">
-      <div class="title"><h2>Academic Foundations</h2><div class="line"></div></div>
-      <div class="grid two">
-        <div class="panel">
-          <h3>Bachelor in Sciences</h3>
-          <p class="muted">Arab Open University, Faculty of Computer Science</p>
-          <ul>
-            <li>Specialized in Cybersecurity.</li>
-            <li>GPA: 3.4</li>
-          </ul>
-        </div>
-        <div class="grid">
-          <div class="panel">
-            <h3>Cisco Certified Network Associate (CCNAv7)</h3>
-            <p class="muted">Certified: 2025</p>
-            <p>Gained hands-on skills in networking fundamentals, IP addressing, routing and switching, network security, and troubleshooting.</p>
-          </div>
-          <div class="panel">
-            <h3>Certified Ethical Hacker (CEHv13)</h3>
-            <p class="muted">Certified: 2025</p>
-            <p>Developed advanced understanding of ethical hacking techniques, penetration testing, and security vulnerability assessment.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <h2>Academic Foundations</h2>
+        <p>Bachelor's degree in Computer Science - Cybersecurity Major</p>
+        <div class="divider"></div>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-      <div class="title"><h2>My Skills</h2><div class="line"></div></div>
-      <p class="muted">My expertise spans a wide range of information security domains, from proactive threat hunting to rapid incident response, leveraging industry-leading tools and methodologies.</p>
-      <div class="grid three" style="margin-top: 10px;">
-        <div class="panel">
-          <h4>Security Operations & Analysis</h4>
-          <span class="chip">SIEM (Splunk, ELK, QRadar)</span>
-          <span class="chip">Log Analysis & Correlation</span>
-          <span class="chip">Threat Detection & Alert Triage</span>
-          <span class="chip">Security Monitoring & Analytics</span>
-        </div>
-        <div class="panel">
-          <h4>Incident Response & Forensics</h4>
-          <span class="chip">Incident Handling & Containment</span>
-          <span class="chip">Malware Analysis</span>
-          <span class="chip">Digital Forensics</span>
-          <span class="chip">Threat Hunting & Intelligence</span>
-        </div>
-        <div class="panel">
-          <h4>Network & System Security</h4>
-          <span class="chip">TCP/IP, DNS, HTTP</span>
-          <span class="chip">Firewall & IDS/IPS</span>
-          <span class="chip">EDR</span>
-          <span class="chip">Linux & Windows Server</span>
-        </div>
-      </div>
-      <div class="panel" style="margin-top: 12px;">
-        <h4>Tools & Scripting</h4>
-        <span class="chip">Python (Automation, Scripting)</span>
-        <span class="chip">PowerShell & Bash</span>
-        <span class="chip">Wireshark & Nmap</span>
-        <span class="chip">Nessus & OpenVAS</span>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <div class="title"><h2>Experience & Expertise</h2><div class="line"></div></div>
-      <div class="grid two">
-        <div class="panel">
-          <h4>SOC Operations Fundamentals</h4>
-          <p class="muted">Gained practical skills in threat monitoring, alert triage, and incident escalation using leading SIEM platforms like Splunk and ELK for log correlation and suspicious activity detection.</p>
-        </div>
-        <div class="panel">
-          <h4>Automation & Threat Intelligence</h4>
-          <p class="muted">Applied prompt engineering to enhance threat detection logic and automation. Studied cyber threat landscapes, understanding attack methodologies, IoCs, and adversary tactics.</p>
-        </div>
-        <div class="panel">
-          <h4>Incident Response & Vulnerability Management</h4>
-          <p class="muted">Participated in full incident response workflows, from classification and containment to mitigation and reporting. Conducted vulnerability management, identifying and prioritizing remediation efforts.</p>
-        </div>
-        <div class="panel">
-          <h4>Capstone Project & Best Practices</h4>
-          <p class="muted">Completed a capstone project simulating real-world SOC scenarios. Developed reports and documented findings, strengthening understanding of security operations, governance, and best practices.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="title"><h2>Offered Services</h2><div class="line"></div></div>
-      <div class="grid two">
-        <div class="panel">
-          <h4>Threat Detection & Monitoring</h4>
-          <p class="muted">Proactive monitoring of networks and systems, utilizing SIEM platforms and advanced analytics to identify suspicious activities and potential breaches in real-time.</p>
-        </div>
-        <div class="panel">
-          <h4>Incident Response & Management</h4>
-          <p class="muted">Rapid containment, eradication, and recovery from security incidents, minimizing impact and restoring operations efficiently. Includes post-incident analysis and reporting.</p>
-        </div>
-        <div class="panel">
-          <h4>Vulnerability Management</h4>
-          <p class="muted">Systematic identification, assessment, and remediation of security vulnerabilities across infrastructure and applications to reduce the attack surface.</p>
-        </div>
-        <div class="panel">
-          <h4>Penetration Testing</h4>
-          <p class="muted">Simulating real-world cyberattacks to identify vulnerabilities, assess security posture, and provide actionable recommendations for enhancing defenses.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section projects">
-      <div class="title"><h2>Projects</h2><div class="line"></div></div>
-      <div class="project">
-        <h3>[Project #1] CCNA Project: Network Infrastructure Simulation</h3>
-        <p class="muted">This project involved designing and implementing a robust, secure, and redundant network infrastructure for a simulated multi-floor branch office using Cisco Packet Tracer. It showcased advanced routing, switching, and security configurations.</p>
+        <h2>Skills</h2>
         <ul>
-          <li><strong>Hierarchical Network Design:</strong> Designed and implemented a complex network structure featuring switches, dual-core routers, and ISP connectivity, establishing a robust and scalable foundation.</li>
-          <li><strong>Secure Access & VLANs:</strong> Configured secure remote access via SSH and implemented essential security measures including Port Security and native VLANs to protect network integrity.</li>
-          <li><strong>Dynamic Routing & Redundancy:</strong> Implemented dynamic routing using OSPF and ensured network redundancy through HSRP across multiple VLANs, optimizing traffic flow and fault tolerance.</li>
-          <li><strong>Critical Network Services:</strong> Deployed essential network services such as DHCP, DNS, PAT, Syslog, and SNMP to support seamless network operation and management.</li>
-          <li><strong>Granular Traffic Control (ACLs):</strong> Created and applied Access Control Lists (ACLs) for granular traffic management, ensuring precise control over network access and data flow.</li>
+            <li>Networking (CCNA)</li>
+            <li>Penetration Testing</li>
+            <li>Incident Response</li>
+            <li>SIEM Tools (Splunk, IBM QRadar)</li>
         </ul>
-      </div>
+        <div class="divider"></div>
+
+        <h2>Experience</h2>
+        <p>Summer Internship - CIB Egypt Bank (Cybersecurity Operations)</p>
+        <div class="divider"></div>
+
+        <h2>Services</h2>
+        <ul>
+            <li>Network Security Assessment</li>
+            <li>Vulnerability Testing</li>
+            <li>Incident Analysis</li>
+        </ul>
+        <div class="divider"></div>
+
+        <h2>Projects</h2>
+        <p>CCNA Network Design, IoT Projects, Security Labs</p>
+        <div class="divider"></div>
+
+        <h2>Contact</h2>
+        <p>Feel free to connect via LinkedIn or GitHub.</p>
     </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="title"><h2>Contact Me</h2><div class="line"></div></div>
-      <div class="grid two">
-        <div class="panel">
-          <div class="kv">
-            <div class="muted">Phone</div>
-            <div><a href="tel:+201553575776">+20 155 357 5776</a></div>
-            <div class="muted">Email</div>
-            <div><a href="mailto:abanobhany522@gmail.com">abanobhany522@gmail.com</a></div>
-            <div class="muted">Location</div>
-            <div>10th of Ramadan City, Sharqia, Egypt</div>
-          </div>
-        </div>
-        <div class="panel">
-          <p class="muted">I am always open to new opportunities, collaborations, or simply a conversation about cybersecurity. Feel free to reach out through any of the channels here.</p>
-          <div class="cta">
-            <a class="btn primary" href="mailto:abanobhany522@gmail.com">Email Me</a>
-            <a class="btn" href="#about">Back to Top</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center; padding: 18px 20px;">
-      <div class="muted">© <span id="year"></span> Abanob Hany. All rights reserved.</div>
-      <div class="muted">Built with <span style="color:var(--primary); font-weight:600;">HTML + CSS</span> • Deployed on GitHub Pages</div>
-    </div>
-  </footer>
-
-  <script>
-    // active link on scroll
-    const menuLinks = [...document.querySelectorAll('#menu a')];
-    const sections = menuLinks.map(a => document.querySelector(a.getAttribute('href')));
-    const setActive = () => {
-      const pos = window.scrollY + 120;
-      let idx = 0;
-      for (let i = 0; i < sections.length; i++) {
-        const s = sections[i];
-        if (!s) continue;
-        const top = s.offsetTop;
-        const bottom = top + s.offsetHeight;
-        if (pos >= top && pos < bottom) { idx = i; break; }
-      }
-      menuLinks.forEach((a,i)=> a.classList.toggle('active', i===idx));
-    };
-    document.addEventListener('scroll', setActive, { passive: true });
-    window.addEventListener('load', () => {
-      document.getElementById('year').textContent = new Date().getFullYear();
-      setActive();
-    });
-  </script>
 </body>
 </html>
