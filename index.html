@@ -1,173 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abanob Hany - Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #0d0d0d;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
-      color: #00ffcc;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-    }
-
-    header h2 {
-      font-size: 1.5rem;
-      color: #66ffe0;
-      text-shadow: 0 0 8px #00ffcc;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 20px;
-      background: rgba(20, 20, 20, 0.95);
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      text-align: center;
-      position: relative;
-      color: #00ffcc;
-      text-transform: uppercase;
-      text-shadow: 0 0 12px #00ffcc;
-    }
-
-    /* Glowing neon border effect for section headers */
-    section h2::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -8px;
-      transform: translateX(-50%);
-      width: 80%;
-      height: 3px;
-      background: linear-gradient(90deg, #00ffcc, #0066ff, #00ffcc);
-      box-shadow: 0 0 12px #00ffcc, 0 0 25px #0066ff;
-      border-radius: 2px;
-      animation: glowing 2s infinite alternate;
-    }
-
-    @keyframes glowing {
-      0% { box-shadow: 0 0 10px #00ffcc, 0 0 20px #0066ff; }
-      100% { box-shadow: 0 0 25px #00ffcc, 0 0 40px #0066ff; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    ul {
-      margin: 10px 0 20px 20px;
-    }
-
-    .contact-info {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .contact-info p {
-      margin: 5px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #66ffe0;
-      font-size: 0.9rem;
-      text-shadow: 0 0 5px #00ffcc;
-    }
-  </style>
+  <title>Abanob Hany | Information Security Analyst</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Abanob Hany</h1>
-    <h2>Information Security Analyst</h2>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>From the first suspicious log entry to the final incident report, I specialize in turning raw data into actionable security intelligence. Working in the SOC field, I have tracked threats in real time, contained incidents under pressure, and safeguarded critical systems against evolving attacks. My mission is simple: see the threat before it sees you.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="glow">Abanob Hany</h1>
+      <h2 class="typewriter">Information Security Analyst</h2>
+    </div>
+    <div class="matrix-bg"></div>
   </section>
 
-  <section>
-    <h2>Academic Foundations</h2>
-    <p>My educational path has equipped me with a strong theoretical understanding and practical skills in the dynamic field of information security, laying the groundwork for my career in threat detection and incident response.</p>
-    <ul>
-      <li><strong>Bachelor in Sciences</strong>, Arab Open University, Faculty of Computer Science<br>Specialized in Cybersecurity. GPA: 3.4</li>
-      <li><strong>Cisco Certified Network Associate (CCNAv7)</strong>, Certified 2025<br>Hands-on networking, security, troubleshooting.</li>
-      <li><strong>Certified Ethical Hacker (CEHv13)</strong>, Certified 2025<br>Ethical hacking, penetration testing, vulnerability assessment.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>My Skills</h2>
-    <ul>
-      <li>SIEM Platforms, Threat Detection, Security Monitoring</li>
-      <li>Incident Response, Forensics, Threat Hunting</li>
-      <li>Network & System Security, EDR, IDS/IPS</li>
-      <li>Python, PowerShell, Bash, Wireshark, Vulnerability Scanners</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Experience & Expertise</h2>
-    <ul>
-      <li>SOC Operations Fundamentals</li>
-      <li>Automation & Threat Intelligence</li>
-      <li>Incident Response & Vulnerability Management</li>
-      <li>Capstone Project & Best Practices</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Offered Services</h2>
-    <ul>
-      <li>Threat Detection & Monitoring</li>
-      <li>Incident Response & Management</li>
-      <li>Vulnerability Management</li>
-      <li>Penetration Testing</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <p><strong>CCNA Project: Network Infrastructure Simulation</strong><br>Designed and implemented a secure, redundant network infrastructure using Cisco Packet Tracer with VLANs, OSPF, HSRP, and ACLs.</p>
-  </section>
-
-  <section>
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-      <p><strong>Phone:</strong> +20 155 357 5776</p>
-      <p><strong>Email:</strong> abanobhany522@gmail.com</p>
-      <p><strong>Location:</strong> 10th of Ramadan City, Sharqia, Egypt</p>
+  <!-- About Section -->
+  <section class="about section">
+    <div class="glass-card">
+      <h2>About Me</h2>
+      <p>
+        I am passionate about cybersecurity, specializing in monitoring, analyzing, and defending systems
+        against threats. With a solid academic background and practical training, I bring strong skills in
+        network defense, threat analysis, and SOC operations.
+      </p>
     </div>
   </section>
 
-  <footer>
-    <p>Thank You! I appreciate your time and interest. Feel free to reach out for collaboration or discussion on enhancing your organization's cybersecurity posture.</p>
+  <!-- Skills Section -->
+  <section class="skills section">
+    <h2 class="glow">Skills & Certifications</h2>
+    <div class="skill-bars">
+      <div class="bar"><span>Network Security</span><div class="progress" style="width:85%"></div></div>
+      <div class="bar"><span>Threat Analysis</span><div class="progress" style="width:80%"></div></div>
+      <div class="bar"><span>Incident Response</span><div class="progress" style="width:75%"></div></div>
+      <div class="bar"><span>Linux & Windows Admin</span><div class="progress" style="width:70%"></div></div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience section">
+    <h2 class="glow">Experience & Services</h2>
+    <div class="card-grid">
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="fas fa-shield-alt"></i><h3>SOC Monitoring</h3></div>
+          <div class="flip-back"><p>Monitoring and analyzing security alerts to detect and respond to threats.</p></div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="fas fa-lock"></i><h3>Vulnerability Assessment</h3></div>
+          <div class="flip-back"><p>Identifying system vulnerabilities and recommending security improvements.</p></div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="fas fa-bug"></i><h3>Threat Hunting</h3></div>
+          <div class="flip-back"><p>Proactively searching for hidden threats within systems and networks.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects section">
+    <h2 class="glow">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>SIEM Deployment</h3>
+        <p>Configured and deployed a Security Information and Event Management (SIEM) system for real-time monitoring.</p>
+      </div>
+      <div class="project-card">
+        <h3>Incident Response Lab</h3>
+        <p>Simulated attack scenarios to practice response workflows and containment strategies.</p>
+      </div>
+      <div class="project-card">
+        <h3>Threat Intel Dashboard</h3>
+        <p>Built a dashboard to track IoCs, malware reports, and visualize attack trends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section">
+    <h2 class="glow">Contact</h2>
+    <div class="contact-info">
+      <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+      <p><i class="fas fa-envelope"></i> abanob@example.com</p>
+      <p><i class="fab fa-linkedin"></i> linkedin.com/in/abanobhany</p>
+    </div>
+  </section>
+
+  <!-- Thank You -->
+  <footer class="thankyou">
+    <p class="glow">Thank you for visiting my portfolio 🚀</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
