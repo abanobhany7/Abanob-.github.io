@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <meta name="description" content="Cybersecurity/SOC portfolio" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+  <link rel="preconnect" href="https://api.github.com">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hero">
+      <img id="avatar" class="avatar" alt="Profile avatar" />
+      <div>
+        <h1 id="name">Your Name</h1>
+        <p class="subtitle">Security Operations (SOC) | Blue Team | Incident Response</p>
+        <div class="links">
+          <a id="ghLink" target="_blank" rel="noopener">GitHub</a>
+          <a id="liLink" target="_blank" rel="noopener">LinkedIn</a>
+          <a id="cvLink" download>Download CV</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I help teams detect, contain, and learn from cyber incidents. I enjoy building SOC playbooks,
+        writing detections, and turning messy logs into clear stories.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="chips">
+        <li>SIEM (Elastic, Splunk)</li>
+        <li>Incident Response</li>
+        <li>Network Security</li>
+        <li>Python</li>
+        <li>OSINT</li>
+        <li>MITRE ATT&CK</li>
+        <li>Threat Hunting</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects (auto-loaded from GitHub)</h2>
+      <div id="projects-grid" class="grid"></div>
+      <div id="projects-note" class="note"></div>
+    </section>
+
+    <section id="certs">
+      <h2>Certifications</h2>
+      <ul>
+        <li>CCNA — Networking basics, routing/switching, and troubleshooting.</li>
+        <li>Any relevant SOC/IR or blue-team courses.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a id="emailLink" href="#">you@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span> Your Name — Built with GitHub Pages</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
