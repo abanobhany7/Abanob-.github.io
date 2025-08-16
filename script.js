@@ -3,7 +3,7 @@
  * 2) (Optional) curate repos in repos.json -> { "repos": ["user/repo1", "user/repo2"] }
  * If repos.json exists, it will be used. Otherwise, top updated repos will be shown.
  */
-const GITHUB_USERNAME = "your-github-username"; // <-- CHANGE THIS
+const GITHUB_USERNAME = "abanobhany7"; // <-- CHANGE THIS
 const MAX_REPOS = 6;
 
 const ghLink = document.getElementById("ghLink");
