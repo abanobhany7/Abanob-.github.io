@@ -1,107 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abanob Hany | Information Security Analyst</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abanob Hany — Information Security Analyst</title>
+  <meta name="description" content="Information Security Analyst portfolio — SOC, IR, Threat Hunting" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script src="https://kit.fontawesome.com/a2e0e6b4f9.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="glow">Abanob Hany</h1>
-      <h2 class="typewriter">Information Security Analyst</h2>
-    </div>
-    <div class="matrix-bg"></div>
-  </section>
+  <!-- Animated background -->
+  <div class="bg">
+    <div class="bg-gradient"></div>
+    <canvas id="matrix"></canvas>
+  </div>
 
-  <!-- About Section -->
-  <section class="about section">
-    <div class="glass-card">
-      <h2>About Me</h2>
-      <p>
-        I am passionate about cybersecurity, specializing in monitoring, analyzing, and defending systems
-        against threats. With a solid academic background and practical training, I bring strong skills in
-        network defense, threat analysis, and SOC operations.
-      </p>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <span class="logo">🛡️</span>
+        <span>Abanob Hany</span>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#academic">Academic</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#thankyou">Thanks</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- Skills Section -->
-  <section class="skills section">
-    <h2 class="glow">Skills & Certifications</h2>
-    <div class="skill-bars">
-      <div class="bar"><span>Network Security</span><div class="progress" style="width:85%"></div></div>
-      <div class="bar"><span>Threat Analysis</span><div class="progress" style="width:80%"></div></div>
-      <div class="bar"><span>Incident Response</span><div class="progress" style="width:75%"></div></div>
-      <div class="bar"><span>Linux & Windows Admin</span><div class="progress" style="width:70%"></div></div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section class="experience section">
-    <h2 class="glow">Experience & Services</h2>
-    <div class="card-grid">
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="fas fa-shield-alt"></i><h3>SOC Monitoring</h3></div>
-          <div class="flip-back"><p>Monitoring and analyzing security alerts to detect and respond to threats.</p></div>
+  <!-- Hero -->
+  <section class="hero section">
+    <div class="container hero-inner reveal-up">
+      <div class="hero-text">
+        <h1 class="glow">Abanob Hany</h1>
+        <h2 class="typewriter" data-words='["Information Security Analyst","SOC & Incident Response","Threat Hunting & Detection Engineering"]'></h2>
+        <p class="motto mono">"Every alert tells a story."</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact"><i class="fa-solid fa-lock"></i> Let’s Connect</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/abanob-hany-314132312/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+        <div class="contacts mono">
+          <a href="mailto:abanobhany522@gmail.com"><i class="fa-regular fa-envelope"></i> abanobhany522@gmail.com</a>
+          <a href="tel:+201553575776"><i class="fa-solid fa-phone"></i> +20 155 357 5776</a>
+          <span><i class="fa-solid fa-location-dot"></i> 10th of Ramadan City, Sharqia</span>
         </div>
       </div>
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="fas fa-lock"></i><h3>Vulnerability Assessment</h3></div>
-          <div class="flip-back"><p>Identifying system vulnerabilities and recommending security improvements.</p></div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="fas fa-bug"></i><h3>Threat Hunting</h3></div>
-          <div class="flip-back"><p>Proactively searching for hidden threats within systems and networks.</p></div>
+      <div class="hero-photo">
+        <div class="avatar-wrap glass glow-border">
+          <img src="assets/profile.jpg" alt="Abanob Hany" class="avatar" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section class="projects section">
-    <h2 class="glow">Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>SIEM Deployment</h3>
-        <p>Configured and deployed a Security Information and Event Management (SIEM) system for real-time monitoring.</p>
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container grid-two">
+      <div class="reveal-left">
+        <h3 class="section-title">About Me</h3>
+        <div class="card glass">
+          <p>Every alert tells a story — and I have built my career on uncovering it. From the first suspicious log entry to the final incident report, I specialize in turning raw data into actionable security intelligence. Working in the SOC field, I have tracked threats in real time, contained incidents under pressure, and safeguarded critical systems against evolving attacks. My mission is simple: see the threat before it sees you.</p>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Incident Response Lab</h3>
-        <p>Simulated attack scenarios to practice response workflows and containment strategies.</p>
-      </div>
-      <div class="project-card">
-        <h3>Threat Intel Dashboard</h3>
-        <p>Built a dashboard to track IoCs, malware reports, and visualize attack trends.</p>
+      <div class="reveal-right about-bg">
+        <img src="assets/profile.jpg" class="about-photo" alt="Abanob portrait" />
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact section">
-    <h2 class="glow">Contact</h2>
-    <div class="contact-info">
-      <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
-      <p><i class="fas fa-envelope"></i> abanob@example.com</p>
-      <p><i class="fab fa-linkedin"></i> linkedin.com/in/abanobhany</p>
+  <!-- Academic -->
+  <section id="academic" class="section">
+    <div class="container">
+      <h3 class="section-title reveal-up">Academic Foundations</h3>
+      <p class="muted reveal-up">My educational path has equipped me with a strong theoretical understanding and practical skills in the dynamic field of information security, laying the groundwork for my career in threat detection and incident response.</p>
+      <div class="timeline">
+        <div class="t-item reveal-up">
+          <div class="t-dot"></div>
+          <div class="t-card glass">
+            <h4><i class="fa-solid fa-graduation-cap"></i> Bachelor in Sciences</h4>
+            <p>Arab Open University, Faculty of Computer Science</p>
+            <ul>
+              <li>Specialized in Cybersecurity</li>
+              <li>GPA: 3.4</li>
+            </ul>
+          </div>
+        </div>
+        <div class="t-item reveal-up">
+          <div class="t-dot"></div>
+          <div class="t-card glass">
+            <h4><i class="fa-solid fa-network-wired"></i> Cisco Certified Network Associate (CCNAv7)</h4>
+            <p><span class="badge">Certified: 2025</span></p>
+            <p>Hands-on skills in networking fundamentals, IP addressing, routing & switching, security, and troubleshooting.</p>
+          </div>
+        </div>
+        <div class="t-item reveal-up">
+          <div class="t-dot"></div>
+          <div class="t-card glass">
+            <h4><i class="fa-solid fa-user-secret"></i> Certified Ethical Hacker (CEHv13)</h4>
+            <p><span class="badge">Certified: 2025</span></p>
+            <p>Ethical hacking techniques, penetration testing, and vulnerability assessment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h3 class="section-title reveal-up">My Skills</h3>
+      <p class="muted reveal-up">My expertise spans proactive threat hunting and rapid incident response, leveraging industry-leading tools and methodologies.</p>
+      <div class="cards grid reveal-up">
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-magnifying-glass-chart"></i> Security Operations & Analysis</h4>
+          <ul>
+            <li>SIEM (Splunk, ELK, QRadar)</li>
+            <li>Log Analysis & Correlation</li>
+            <li>Threat Detection & Alert Triage</li>
+            <li>Security Monitoring & Analytics</li>
+          </ul>
+        </div>
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-shield-halved"></i> Incident Response & Forensics</h4>
+          <ul>
+            <li>Incident Handling & Containment</li>
+            <li>Malware Analysis</li>
+            <li>Digital Forensics</li>
+            <li>Threat Hunting & Intelligence</li>
+          </ul>
+        </div>
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-diagram-project"></i> Network & System Security</h4>
+          <ul>
+            <li>TCP/IP, DNS, HTTP</li>
+            <li>Firewall & IDS/IPS</li>
+            <li>Endpoint Detection & Response (EDR)</li>
+            <li>Linux, Windows Server</li>
+          </ul>
+        </div>
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-terminal"></i> Tools & Scripting</h4>
+          <ul>
+            <li>Python, PowerShell, Bash</li>
+            <li>Wireshark & Nmap</li>
+            <li>Nessus, OpenVAS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h3 class="section-title reveal-up">Experience & Expertise</h3>
+      <div class="cards grid reveal-up">
+        <div class="card flip">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h4>SOC Operations Fundamentals</h4>
+              <p class="muted">Real-time monitoring & triage</p>
+            </div>
+            <div class="flip-back">
+              <p>Threat monitoring, alert triage, and incident escalation using SIEM (Splunk, ELK) for correlation and suspicious activity detection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card flip">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h4>Automation & Threat Intelligence</h4>
+              <p class="muted">Detection logic & enrichment</p>
+            </div>
+            <div class="flip-back">
+              <p>Applied prompt engineering to enhance detection logic and automation. Researched threat landscapes, IoCs, and adversary tactics.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card flip">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h4>Incident Response & Vulnerability Mgmt</h4>
+              <p class="muted">Containment to reporting</p>
+            </div>
+            <div class="flip-back">
+              <p>End-to-end IR: classification, containment, mitigation, and reporting. Vulnerability identification and prioritized remediation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card flip">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h4>Capstone & Best Practices</h4>
+              <p class="muted">Real-world SOC simulations</p>
+            </div>
+            <div class="flip-back">
+              <p>Simulated SOC scenarios, produced reports & documentation to reinforce security operations, governance, and best practices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h3 class="section-title reveal-up">Offered Services</h3>
+      <div class="cards grid reveal-up">
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-wave-square"></i> Threat Detection & Monitoring</h4>
+          <p>Proactive network/system monitoring using SIEM & analytics to catch threats in real time.</p>
+        </div>
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-screwdriver-wrench"></i> Incident Response & Management</h4>
+          <p>Rapid containment, eradication, and recovery with post-incident analysis & reporting.</p>
+        </div>
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-bug"></i> Vulnerability Management</h4>
+          <p>Lifecycle management of vulnerabilities across infra and apps to reduce attack surface.</p>
+        </div>
+        <div class="card hover-glow">
+          <h4><i class="fa-solid fa-user-ninja"></i> Penetration Testing</h4>
+          <p>Simulated cyberattacks to expose weaknesses and provide clear, actionable fixes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h3 class="section-title reveal-up">Projects</h3>
+      <div class="cards grid reveal-up">
+        <article class="card project">
+          <div class="project-head">
+            <h4>CCNA Project: Network Infrastructure Simulation</h4>
+            <span class="badge">Cisco Packet Tracer</span>
+          </div>
+          <ul class="project-points">
+            <li>Hierarchical network with dual-core routers and ISP connectivity.</li>
+            <li>SSH, Port Security, and VLAN segmentation.</li>
+            <li>OSPF dynamic routing & HSRP redundancy across VLANs.</li>
+            <li>DHCP, DNS, PAT, Syslog, SNMP for ops & observability.</li>
+            <li>ACLs for granular traffic control.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div>
+        <h3 class="section-title reveal-up">Contact Me</h3>
+        <p class="muted reveal-up">I’m open to opportunities, collaborations, and security conversations.</p>
+        <div class="contact-list reveal-up">
+          <a href="tel:+201553575776"><i class="fa-solid fa-phone"></i> +20 155 357 5776</a>
+          <a href="mailto:abanobhany522@gmail.com"><i class="fa-regular fa-envelope"></i> abanobhany522@gmail.com</a>
+          <a href="https://www.linkedin.com/in/abanob-hany-314132312/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <span><i class="fa-solid fa-location-dot"></i> 10th of Ramadan City, Sharqia, Egypt</span>
+        </div>
+      </div>
+      <form class="contact-form card glass reveal-up" onsubmit="event.preventDefault(); alert('Thanks, your message was not sent (demo).');">
+        <label>Name<input type="text" required></label>
+        <label>Email<input type="email" required></label>
+        <label>Message<textarea rows="4" required></textarea></label>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
     </div>
   </section>
 
   <!-- Thank You -->
-  <footer class="thankyou">
-    <p class="glow">Thank you for visiting my portfolio 🚀</p>
-  </footer>
+  <section id="thankyou" class="section">
+    <div class="container">
+      <div class="thankyou-card glow-border">
+        <h3 class="glow">Thank You!</h3>
+        <p>I appreciate your time and interest. Please feel free to reach out with any questions or for further discussion on enhancing your organization's cybersecurity posture.</p>
+        <a class="btn ghost" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+      </div>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Abanob Hany — Built for speed & clarity.</small>
+    </div>
+  </footer>
 </body>
 </html>
-
