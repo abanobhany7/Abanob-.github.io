@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f6fa;
+  color: #2c3e50;
+}
+header {
+  background: #1e272e;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+header nav a {
+  margin: 0 10px;
+  color: #00a8ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.section {
+  padding: 50px 20px;
+  background: #fff;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 1000px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.section h2 {
+  color: #1e272e;
+  margin-bottom: 20px;
+}
+.profile-photo {
+  width: 150px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.thankyou {
+  text-align: center;
+  background: #dff9fb;
+}
+footer {
+  background: #1e272e;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
